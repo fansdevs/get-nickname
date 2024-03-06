@@ -2,9 +2,9 @@
 //header('Content-Type: application/json');
 
 //if (isset($_POST['code']) AND isset($_POST['target']) AND isset($_POST['additional_target'])) {
-$code = 'mobile-legends';
-$target = '33023157';
-$additional_target = '2048';
+$code = 'higgs-domino';
+$target = '701950069';
+$additional_target = '';
 
 //if (!$code || !$target || !$additional_target)
 //{
