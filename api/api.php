@@ -1,5 +1,17 @@
 <?php
-$apiKeys = 'wGLFdJkJXm0rFFRnbWXBROYqoG6PZhEksz9sYdsFraPhSZFbXt2d7IeErjU1CQzH';
+header('Content-Type: application/json');
+
+if (isset($_POST['code']) AND isset($_POST['target']) AND isset($_POST['additional_target'])) {
+$code = $_POST['code'];
+$target = $_POST['target'];
+$additional_target = $_POST['additional_target'];
+
+if (!$code || !$target || !$additional_target)
+{
+$hasilnya = array('status' => false, 'data' => array('pesan' => 'Ups, Permintaan Tidak Sesuai.'));
+} 
+else {
+    $apiKeys = 'wGLFdJkJXm0rFFRnbWXBROYqoG6PZhEksz9sYdsFraPhSZFbXt2d7IeErjU1CQzH';
     $merchantCodes = 'U6jeTFhL';
     $signe = $merchantCodes.$apiKeys;
     $sign = md5($signe);
@@ -13,11 +25,17 @@ $apiKeys = 'wGLFdJkJXm0rFFRnbWXBROYqoG6PZhEksz9sYdsFraPhSZFbXt2d7IeErjU1CQzH';
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array('key' => $apiKeys, 'sign' => $sign, 'type' => 'get-nickname', 'code' => 'mobile-legends', 'target' => '33023157', 'additional_target' => '2048'),
+        CURLOPT_POSTFIELDS => array('key' => $apiKeys, 'sign' => $sign, 'type' => 'get-nickname', 'code' => $code, 'target' => $target, 'additional_target' => $additional_target),
     ));
     $response1 = curl_exec($curl1);
     curl_close($curl1);
     $hasils = json_decode($response1, true);
-    echo $response1;
-    echo $nickname = $hasils['data'];
+$nickname = $hasils['data']; 
+$hasilnya = array('result' => true, 'data' => $nickname);
+}
+}
+else {
+$hasilnya = array('result' => false, 'data' => 'Gagal, Hubungi Admin!');
+}
+print(json_encode($hasilnya, JSON_PRETTY_PRINT));
 ?>
