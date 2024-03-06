@@ -30,7 +30,8 @@ else {
     $response1 = curl_exec($curl1);
     curl_close($curl1);
     $hasils = json_decode($response1, true);
-$nickname = $hasils['data']; 
+    echo $response1;
+    $nickname = $hasils['data']; 
 $hasilnya = array('result' => true, 'data' => $nickname);
 }
 }
