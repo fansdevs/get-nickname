@@ -1,5 +1,5 @@
 <?php
-$apiKeys = 'D6bMLXuhLdsb6hqXMxAz9aCFwm86HK2JcnMjaaWYnjcgjVSnPfZJk271iUS1AgNF';
+$apiKeys = 'wGLFdJkJXm0rFFRnbWXBROYqoG6PZhEksz9sYdsFraPhSZFbXt2d7IeErjU1CQzH';
     $merchantCodes = 'U6jeTFhL';
     $signe = $merchantCodes.$apiKey;
     $sign = md5($signe);
@@ -13,7 +13,7 @@ $apiKeys = 'D6bMLXuhLdsb6hqXMxAz9aCFwm86HK2JcnMjaaWYnjcgjVSnPfZJk271iUS1AgNF';
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array('key' => $apiKey, 'sign' => $sign, 'type' => 'get-nickname', 'code' => $code, 'target' => $target, 'additional_target' => $additional_target),
+        CURLOPT_POSTFIELDS => array('key' => $apiKeys, 'sign' => $sign, 'type' => 'get-nickname', 'code' => $code, 'target' => $target, 'additional_target' => $additional_target),
     ));
     $response1 = curl_exec($curl1);
     curl_close($curl1);
