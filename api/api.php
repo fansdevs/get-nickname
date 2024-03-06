@@ -1,16 +1,16 @@
 <?php
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 
-if (isset($_POST['code']) AND isset($_POST['target']) AND isset($_POST['additional_target'])) {
-$code = $_POST['code'];
-$target = $_POST['target'];
-$additional_target = $_POST['additional_target'];
+//if (isset($_POST['code']) AND isset($_POST['target']) AND isset($_POST['additional_target'])) {
+$code = 'mobile-legends';
+$target = '33023157';
+$additional_target = '2048';
 
-if (!$code || !$target || !$additional_target)
-{
+//if (!$code || !$target || !$additional_target)
+//{
 $hasilnya = array('status' => false, 'data' => array('pesan' => 'Ups, Permintaan Tidak Sesuai.'));
-} 
-else {
+//} 
+//else {
     $apiKeys = 'wGLFdJkJXm0rFFRnbWXBROYqoG6PZhEksz9sYdsFraPhSZFbXt2d7IeErjU1CQzH';
     $merchantCodes = 'U6jeTFhL';
     $signe = $merchantCodes.$apiKeys;
@@ -33,10 +33,10 @@ else {
     echo $response1;
     $nickname = $hasils['data']; 
 $hasilnya = array('result' => true, 'data' => $nickname);
-}
-}
-else {
-$hasilnya = array('result' => false, 'data' => 'Gagal, Hubungi Admin!');
-}
-print(json_encode($hasilnya, JSON_PRETTY_PRINT));
+//}
+//}
+//else {
+//$hasilnya = array('result' => false, 'data' => 'Gagal, Hubungi Admin!');
+//}
+//print(json_encode($hasilnya, JSON_PRETTY_PRINT));
 ?>
