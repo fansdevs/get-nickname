@@ -1,7 +1,7 @@
 <?php
 $apiKeys = 'wGLFdJkJXm0rFFRnbWXBROYqoG6PZhEksz9sYdsFraPhSZFbXt2d7IeErjU1CQzH';
     $merchantCodes = 'U6jeTFhL';
-    $signe = $merchantCodes.$apiKey;
+    $signe = $merchantCodes.$apiKeys;
     $sign = md5($signe);
     $curl1 = curl_init();
     curl_setopt_array($curl1, array(
