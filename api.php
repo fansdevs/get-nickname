@@ -11,8 +11,6 @@ if (!$code || !$target || !$additional_target)
 $hasilnya = array('status' => false, 'data' => array('pesan' => 'Ups, Permintaan Tidak Sesuai.'));
 } 
 else {
- $sql_4 = mysqli_query($conn,"SELECT * FROM `tb_tripayapi` WHERE cuid = 4") or die(mysqli_error());
-    $s4 = mysqli_fetch_array($sql_4);
     $apiKeys = 'D6bMLXuhLdsb6hqXMxAz9aCFwm86HK2JcnMjaaWYnjcgjVSnPfZJk271iUS1AgNF';
     $merchantCodes = 'U6jeTFhL';
     $signe = $merchantCodes.$apiKey;
