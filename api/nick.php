@@ -56,7 +56,7 @@ else {
 
     ));
 
-    $response1 = curl_exec($curl1);
+   echo $response1 = curl_exec($curl1);
 
     curl_close($curl1);
 
