@@ -4,7 +4,7 @@
 //if (isset($_POST['code']) AND isset($_POST['target']) AND isset($_POST['additional_target'])) {
 $code = 'higgs-domino';
 $target = '79678285';
-$additional_target = '';
+$additional_target = 'undefined';
 
 //if (!$code || !$target || !$additional_target)
 //{
