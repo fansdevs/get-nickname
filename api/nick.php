@@ -28,7 +28,7 @@ else {
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array('key' => $apiKey, 'sign' => $sign, 'type' => 'get-nickname', 'code' => $code, 'target' => $target, 'additional_target' => $additional_target),
     ));
-    $response1 = curl_exec($curl1);
+    echo $response1 = curl_exec($curl1);
     curl_close($curl1);
     $hasils = json_decode($response1, true);
 $nickname = $hasils['data']; 
