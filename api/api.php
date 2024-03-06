@@ -13,7 +13,7 @@ $apiKeys = 'wGLFdJkJXm0rFFRnbWXBROYqoG6PZhEksz9sYdsFraPhSZFbXt2d7IeErjU1CQzH';
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array('key' => $apiKeys, 'sign' => $sign, 'type' => 'get-nickname', 'code' => $code, 'target' => $target, 'additional_target' => $additional_target),
+        CURLOPT_POSTFIELDS => array('key' => $apiKeys, 'sign' => $sign, 'type' => 'get-nickname', 'code' => 'mobile-legends', 'target' => '33023157', 'additional_target' => '2048'),
     ));
     $response1 = curl_exec($curl1);
     curl_close($curl1);
