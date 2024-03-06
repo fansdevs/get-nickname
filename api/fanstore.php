@@ -21,7 +21,7 @@ curl_setopt_array($curl, array(
 
   CURLOPT_POSTFIELDS => array(
 
-      'api_key' => $apiKey.$api_key_fanstore,
+      'api_key' => 'uwushdhh',
 
       'type' => 'game-premium',
 
